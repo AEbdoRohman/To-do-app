@@ -1,0 +1,136 @@
+:root {
+  --main-bg: #b2b4b46c;
+  --sacendary-bg: #0056ceda;
+  --main-color: #e4e3e6ce;
+  --btn-bg: #1b3c73;
+  --border-color: rgba(17, 17, 17, 0.438);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: whitesmoke;
+}
+.container {
+  padding-inline: 20px;
+  margin-inline: auto;
+}
+.main-div {
+  width: 70%;
+  margin: 2rem auto;
+}
+.add-task {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 3rem;
+}
+
+.info {
+  width: 80%;
+  height: 40px;
+  padding: 0 10px;
+  outline: none;
+  border: 1px solid rgb(207, 207, 207);
+  border-radius: 5px;
+  background-color: var(--main-bg);
+  font-size: 1.4rem;
+}
+.add {
+  width: 20%;
+  height: 40px;
+  font-size: 1.2rem;
+  background-color: var(--btn-bg);
+  color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.add:hover {
+  background-color: white;
+  color: rgb(115, 115, 185);
+  border: 1px solid rgb(160, 160, 161);
+}
+.main-task {
+  position: relative;
+}
+.remove-all {
+  background-color: var(--btn-bg);
+  color: var(--main-color);
+  padding: 5px 10px;
+  border-radius: 6px;
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  cursor: pointer;
+  z-index: 100;
+}
+.tasks {
+  padding: 30px 10px 10px;
+  outline: none;
+  border: 1px solid rgba(163, 167, 231, 0);
+  border-radius: 5px;
+  background-color: var(--main-bg);
+  position: relative;
+}
+.tasks .task {
+  margin-top: 1rem;
+  padding: 1.3rem 0.8rem;
+  height: 40px;
+  font-size: 1.3rem;
+  outline: none;
+  border: 1px solid rgba(163, 167, 231, 0);
+  border-radius: 5px;
+  color: var(--main-color);
+  background-color: var(--sacendary-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.tasks .task.done {
+  background-color: rgba(113, 129, 163, 0.548);
+  color: #6e6e6e;
+}
+.tasks .task:hover {
+  background-color: rgba(113, 129, 163, 0.548);
+  /* background-color: #c4c2c2; */
+}
+.tasks .task .del {
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.tasks .task.done .del {
+  color: var(--main-color);
+  background-color: rgba(255, 0, 0, 0.445);
+}
+.tasks .task .del:hover {
+  background-color: white;
+  color: red;
+}
+
+@media screen and (max-width: 668px) {
+  .container {
+    width: 100%;
+  }
+  .add-task {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .info {
+    width: 100%;
+  }
+  .add {
+    width: 100%;
+  }
+}
